@@ -7,10 +7,14 @@ import sys
 
 link = argv[1]
 yt = YouTube(link)
+
+# Change this path to your desired folder
 folder = '/Users/fabriziomendez/Documents/Studio One/Multitracks/audiodownloader'
 
 print ("Title: ", yt.title)
 print ("Views: ", yt.views)
+
+# If you only want the mp4 file, remove below commented lines:
 
 # yd = yt.streams.get_highest_resolution()
 
@@ -21,7 +25,7 @@ ya = yt.streams.filter(only_audio=True)
 ya[1].download(folder)
 
 def downloadedFile():
-# used to rename file extension
+# Used to rename file extension
     for filename in os.listdir(folder):
         infilename = os.path.join(folder,filename)
         if not os.path.isfile(infilename): continue
