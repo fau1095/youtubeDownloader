@@ -5,7 +5,7 @@ from pathlib import Path
 import os
 import sys
 
-link = input("Enter the URL: \n"+(argv[0]))
+link = input((argv[0])+"\n Enter the URL: ")
 yt = YouTube(link)
 
 # Change this path to your desired folder 
