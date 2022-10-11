@@ -5,10 +5,10 @@ from pathlib import Path
 import os
 import sys
 
-link = argv[1]
+link = input("Enter the URL: \n"+(argv[0]))
 yt = YouTube(link)
 
-# Change this path to your desired folder
+# Change this path to your desired folder 
 folder = '/Users/fabriziomendez/Documents/Studio One/Multitracks/audiodownloader'
 
 print ("Title: ", yt.title)
