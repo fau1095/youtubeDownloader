@@ -1,3 +1,4 @@
+#Coded by Fau, all rights reserved
 #!/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
 from pytube import YouTube
 from pydub import AudioSegment
