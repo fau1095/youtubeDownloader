@@ -50,26 +50,20 @@ def downloadedFile():
 # Specify the complete file path for the input MP4 file
     input_file_path = os.path.join(os.getcwd(),file_name)
     sound = AudioSegment.from_file(file_name, format="mp4")
-
-# Set the mp3 file name
 # Specify the complete file path for the output MP3 file
-    #mp3_file = yt.title + '.mp3'
     mp3_file = os.path.join(os.getcwd(), yt.title + '.mp3')
-# Export the mp3 file
+# Export the mp3 file, while catching any possible error in the try/catch statement below
     try:    
         sound.export(mp3_file, format="mp3")
     except Exception as e:
         print("Error during MP4 to MP3 conversion:",e)    
-
 # Delete the mp4 file
-    #os.remove(file_name)
     os.remove(input_file_path)
-
 # Create the destination folder if it doesn't exist    
     folder_location = myDesiredFolder
     if not os.path.exists(folder_location):
         os.makedirs(folder_location)
 # Move the MP3 file to the destination folder
     shutil.move(mp3_file, folder_location)
-
+    
 downloadedFile()
