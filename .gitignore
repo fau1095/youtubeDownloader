@@ -1,3 +1,4 @@
+.DS_Store
 # Environments
 .env
 .venv
@@ -6,5 +7,3 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-# Other
-.DS_Store
