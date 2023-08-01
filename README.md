@@ -1,4 +1,4 @@
-# youtubeDownloader program to download YouTube videos and converting them to an .mp3 file, have fun you lil twat
+# youtubeDownloader program to download YouTube videos and converting them to an .mp3 file, have fun!
 
 To create an executable application for your system:
 
