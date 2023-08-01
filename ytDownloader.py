@@ -1,3 +1,4 @@
+# Coded by Fau
 #!/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
 from pytube import YouTube
 from pydub import AudioSegment
@@ -18,9 +19,7 @@ ya = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolut
 # yd.download("/Users/fabriziomendez/Downloads")
 
 #ya = yt.streams.filter(only_audio=True)
-
 ya.download()
-
 
 def downloadedFile():
 # used to rename file extension
