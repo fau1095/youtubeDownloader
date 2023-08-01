@@ -1,5 +1,5 @@
 #Coded by Fau, all rights reserved
-#!/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
+
 from pytube import YouTube
 from pydub import AudioSegment
 from sys import argv
@@ -36,13 +36,11 @@ print("Views: ", yt.views)
 # The 'desc' method reverses the order, so we get the highest resolution stream first.
 # Finally, the 'first' method returns the first item from the filtered and sorted list, which corresponds to the highest resolution stream available.
 # Yes, I let ChatGPT do these explanaitions because I'm too lazy
-
 ya = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
 
 # Download the selected progressive MP4 stream.
 # Once we have the 'ya' stream object representing the highest resolution MP4 stream,
 # we use the 'download' method to initiate the download of the video file to the current working directory.
-
 ya.download()
 
 def downloadedFile():
