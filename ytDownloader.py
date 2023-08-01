@@ -1,42 +1,45 @@
+#!/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
 from pytube import YouTube
 from pydub import AudioSegment
+from sys import argv
+from pathlib import Path
 import os
 import shutil
 
-link = input("Enter the URL: ")
-try:
-    yt = YouTube(link)
-except:
-    print("Error: Invalid YouTube link.")
-    exit()
-
+link = input((argv[0])+"\n Enter the URL: ")
+yt = YouTube(link)
 myDesiredFolder = '/Users/fabriziomendez/Documents/Studio One/Multitracks/audiodownloader'
 
-print("Title: ", yt.title)
-print("Views: ", yt.views)
+print ("Title: ", yt.title)
+print ("Views: ", yt.views)
 
-try:
-    # Download the mp4 file
-    mp4_file = yt.title + '.mp4'
-    yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first().download()
-except:
-    print("Error: Unable to download the video.")
-    exit()
+# yd = yt.streams.get_highest_resolution()
+ya = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
+# yd.download("/Users/fabriziomendez/Downloads")
 
-try:
-    # Convert mp4 to mp3
+#ya = yt.streams.filter(only_audio=True)
+
+ya.download()
+
+
+def downloadedFile():
+# used to rename file extension
+# Convert mp4 to mp3
+    file_name = yt.title + '.mp4'
+    sound = AudioSegment.from_file(file_name, format="mp4")
+
+# Set the mp3 file name
     mp3_file = yt.title + '.mp3'
-    AudioSegment.from_file(mp4_file).export(mp3_file, format="mp3")
 
-    # Delete the mp4 file
-    os.remove(mp4_file)
+# Export the mp3 file
+    sound.export(mp3_file, format="mp3")
 
-    # Move the mp3 file to the desired folder
-    if not os.path.exists(myDesiredFolder):
-        os.makedirs(myDesiredFolder)
-    shutil.move(mp3_file, myDesiredFolder)
-except:
-    print("Error: Unable to convert the video to mp3 or move the file to the desired folder.")
-    exit()
+# Delete the mp4 file
+    os.remove(file_name)
 
-print("Successfully converted the video to mp3 and moved it to the desired folder.")
+    folder_location = myDesiredFolder
+    if not os.path.exists(folder_location):
+        os.makedirs(folder_location)
+    shutil.move(mp3_file, folder_location)
+
+downloadedFile()
