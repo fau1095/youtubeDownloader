@@ -43,7 +43,7 @@ Using Automator app:
 	
            tell application "Terminal"
 	       do script with command "python /Users/*YOURPATH*/ytDownloader.py"
-	   end tell
+           end tell
 	
 	    return input
         end run
