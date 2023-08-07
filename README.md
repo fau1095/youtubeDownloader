@@ -62,4 +62,4 @@ Using Automator app:
 
 
 
-- Fau was here -
+Fau was here.
