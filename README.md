@@ -39,14 +39,14 @@ Using Automator app:
 
 3. Paste the following commands into the editor:
 
-on run {input, parameters}
+	on run {input, parameters}
 	
-	tell application "Terminal"
-	    do script with command "python /Users/*YOURPATH*/ytDownloader.py"
-	end tell
+		tell application "Terminal"
+	    	do script with command "python /Users/*YOURPATH*/ytDownloader.py"
+		end tell
 	
-	return input
-end run
+		return input
+	end run
 
 4. Save the app in the Applications folder
 
