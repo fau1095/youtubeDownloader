@@ -15,19 +15,19 @@ PRO TIP: create an executable application to run this script on your system.
 
 2. Paste the following into the editor:
 
-    tell application "Terminal"
-	    do script with command "python /Users/*YOURPATH*/ytDownloader.py"
-    end tell
+       tell application "Terminal"
+           do script with command "python /Users/*YOURPATH*/ytDownloader.py"
+       end tell
 
-3. Go to File -> Export
+4. Go to File -> Export
 
-4. On "Where:" I would suggest putting the application into the Applications folder so that you can see it in your Launchpad
+5. On "Where:" I would suggest putting the application into the Applications folder so that you can see it in your Launchpad
 
-5. On "File Format:" , choose Application instead of Script, hit save.
+6. On "File Format:" , choose Application instead of Script, hit save.
 
-6. Double click your new application to run the automation
+7. Double click your new application to run the automation
 
-7. Enjoy!
+8. Enjoy!
 
 Using Automator app:
 
@@ -39,16 +39,16 @@ Using Automator app:
 
 3. Paste the following commands into the editor:
 
-	on run {input, parameters}
+        on run {input, parameters}
 	
-		tell application "Terminal"
-	    	do script with command "python /Users/*YOURPATH*/ytDownloader.py"
-		end tell
+           tell application "Terminal"
+	       do script with command "python /Users/*YOURPATH*/ytDownloader.py"
+	   end tell
 	
-		return input
-	end run
+	    return input
+        end run
 
-4. Save the app in the Applications folder
+5. Save the app in the Applications folder
 
 7. Go to Launchpad, find the app and click it to run the automation
 
