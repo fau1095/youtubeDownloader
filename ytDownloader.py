@@ -1,14 +1,15 @@
 """
-
 Ver 8.7.23
 Coded by Fau, all rights reserved, but feel free to use the script on your own.
-
+This script is a simple YouTube video downloader that downloads the highest resolution MP4 stream available for a given YouTube video URL, then it converts the downloaded MP4 file to an MP3 file.
 """
 
 # Import required libraries for YouTube video download and video/audio processing
-from pytube import YouTube
-from moviepy.editor import VideoFileClip
+# Removed pytube since it's not working anymore, replaced with pytubefix
+from pytubefix import YouTube
 import os
+from moviepy.editor import VideoFileClip
+
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
