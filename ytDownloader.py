@@ -9,6 +9,7 @@ This script is a simple YouTube video downloader that downloads the highest reso
 from pytubefix import YouTube
 import os
 from moviepy.editor import VideoFileClip
+from pytubefix.helpers import safe_filename
 
 from dotenv import load_dotenv
 
@@ -43,8 +44,9 @@ if not os.path.exists(media_folder):
     os.makedirs(media_folder)
 
 # Download the YouTube video's MP4 stream to the media folder
-ya.download(output_path=media_folder)
-
+filename = safe_filename(yt.title) + ".mp4"
+ya.download(output_path=media_folder, filename=filename)
+print(f"Downloading as: {filename}")
 # Function to convert the downloaded MP4 to MP3
 def convert_mp4_to_mp3(input_path, output_folder):
     try:
